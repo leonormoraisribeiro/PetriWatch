@@ -57,7 +57,7 @@ cd PetriWatch
 python3 petriwatch.py
 ```
 
---
+---
 
 ## File Storage
 Images are automatically saved under:
@@ -67,7 +67,7 @@ Images are automatically saved under:
 Each experiment gets its own folder.
 Images are timestamped and numbered sequentially.
 
---
+---
 
 ## Usage
 1. Enter the **experiment name**
@@ -79,7 +79,7 @@ Images are timestamped and numbered sequentially.
 7. Acquisition begins; the progress indicator updates automatically
 8. The program runs until all frames are captured
 
---
+---
 
 ## Dependencies
 Already included with Python:
@@ -92,7 +92,7 @@ Requires installation on Raspberry Pi:
 - OpenCV (cv2)
 - Pillow (PIL)
 
---
+---
 
 ## Notes
 - Ensure rpicam-still is installed for high-resolution captures
