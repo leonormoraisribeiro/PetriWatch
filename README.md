@@ -8,7 +8,7 @@ Using the same hardware setup as **WellView**
 (Raspberry Pi 4B + Raspberry Pi HQ Camera on a stereo microscope),  
 PetriWatch captures images at user-defined intervals for hours or even days.
 
----
+--- 
 
 ## Features
 
