@@ -2,29 +2,27 @@
 
 Python application developed in collaboration with **i3S – Instituto de Investigação e Inovação em Saúde** (Porto, Portugal; [www.i3s.up.pt](https://www.i3s.up.pt)).
 
-**PetriWatch** is a lightweight Raspberry Pi tool designed for **automatic, long-term image acquisition**, ideal for *petri dish growth monitoring*, *time-lapse generation*, and *slow biological processes*.
+**PetriWatch** is a lightweight Raspberry Pi tool designed for **automatic, long-term image acquisition**. It was conceived for **Petri dish culture growth monitoring** (and for subsequent time-lapse video generation from the images acquired) and is equally well suited for documenting other slow processes.
 
-Using the same hardware setup as **WellView**  
-(Raspberry Pi 4B + Raspberry Pi HQ Camera on a stereo microscope),  
+The hardware setup used is similar to that of **WellView** (Raspberry Pi 4B + Raspberry Pi HQ Camera), except that a lower magnification C-mount objective is used in place of the stereo microscope.
 PetriWatch captures images at user-defined intervals for hours or even days.
 
 --- 
 
 ## Features
 
-- Interval-based image acquisition for time-lapse recording  
+- Time interval-based image acquisition
 - Configurable intervals:
-  - **1, 2, 5, 10, 15, 20, 30 minutes**
-- Selectable resolutions:
+  - **1, 2, 5, 10, 15, 20 or 30 minutes**
+- Selectable image resolution:
   - **4056 × 3040 (full res)**
   - **2028 × 1520**
   - **1014 × 760**
 - Simple GUI using Tkinter
 - Live preview mode from Raspberry Pi HQ camera  
 - Automatic creation of a folder for each experiment
-- Numeric field for total number of frames
-- Large, colored **Start Recording** button
-- Progress indicator showing acquisition status  
+- Numeric field for setting the total number of frames
+- Progress indicator displaying acquisition status  
 - Stable for long-running experiments (multiple days)
 
 ---
