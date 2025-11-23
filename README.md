@@ -74,7 +74,7 @@ python3 petriwatch.py
 ## File Storage
 Images are automatically saved under:
 ```bash
-~/Pictures/PetriWatch/{ExperimentName}/frame_00001.png
+~/Pictures/Timelapses/<ExperimentName>_<YYYYMMDD_HHMMSS>/
 ```
 Each experiment gets its own folder.
 Images are timestamped and numbered sequentially.
