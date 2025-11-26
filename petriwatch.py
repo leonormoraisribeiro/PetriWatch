@@ -410,7 +410,7 @@ class TimelapseApp:
         # Choose folder window
         win_select = Toplevel(self.root)
         win_select.title("Select Timelapse Folder")
-        win_select.geometry("420x260")
+        win_select.geometry("420x300")
 
         ttk.Label(win_select, text="Choose a timelapse folder:").pack(pady=10)
 
