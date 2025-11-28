@@ -8,7 +8,7 @@ import subprocess
 import shutil
 from pathlib import Path
 from datetime import datetime
-from typing import Tuple 
+from typing import Tuple
 
 from tkinter import *
 from tkinter import ttk, messagebox, filedialog
@@ -97,7 +97,7 @@ class TimelapseApp:
         self.var_res = StringVar(value="2028 x 1520")
         self.var_total = StringVar(value="144")
         self.var_exp = StringVar(value="timelapse")
-        self.var_auto_video = BooleanVar(value=False)  # checkbox
+        self.var_auto_video = BooleanVar(value=False)
 
         # GUI
         self._build_gui()
@@ -107,7 +107,6 @@ class TimelapseApp:
     # GUI
 
     def _build_gui(self):
-
         ttk.Label(self.root, text="Interval (min):").grid(row=0, column=0, sticky="w", padx=10, pady=8)
         ttk.OptionMenu(self.root, self.var_interval, self.var_interval.get(),
                        *[str(v) for v in self.INTERVALS_MIN]).grid(
@@ -245,7 +244,6 @@ class TimelapseApp:
         run_dir.mkdir(parents=True, exist_ok=True)
         self.last_run_dir = run_dir
 
-        
         settings = {
             "experiment": exp_name,
             "created_at": now_human(),
@@ -409,8 +407,25 @@ class TimelapseApp:
 
         # Choose folder window
         win_select = Toplevel(self.root)
+        win_select.withdraw()
         win_select.title("Select Timelapse Folder")
-        win_select.geometry("420x300")
+
+        def place_select_window():
+            self.root.update_idletasks()
+            win_w, win_h = 420, 320
+            root_x = self.root.winfo_rootx()
+            root_y = self.root.winfo_rooty()
+            root_w = self.root.winfo_width()
+            x = root_x + root_w + 10
+            y = root_y
+            win_select.geometry(f"{win_w}x{win_h}+{x}+{y}")
+            win_select.deiconify()
+            win_select.lift()
+            win_select.focus_force()
+            win_select.grab_set()
+
+        win_select.after(10, place_select_window)
+
 
         ttk.Label(win_select, text="Choose a timelapse folder:").pack(pady=10)
 
@@ -430,8 +445,8 @@ class TimelapseApp:
 
             # video options window
             win = Toplevel(self.root)
+            win.withdraw()
             win.title("Create Video")
-            win.geometry("320x180")
 
             ttk.Label(win, text="Framerate (fps):").pack(pady=5)
             var_fps = StringVar(value="30")
@@ -451,6 +466,22 @@ class TimelapseApp:
                     messagebox.showerror("Error", f"Could not create video:\n{e}")
 
             ttk.Button(win, text="Create", command=run_create).pack(pady=10)
+
+            def place_window():
+                self.root.update_idletasks()
+                win_w, win_h = 320, 180
+                root_x = self.root.winfo_rootx()
+                root_y = self.root.winfo_rooty()
+                root_w = self.root.winfo_width()
+                x = root_x + root_w + 10
+                y = root_y
+                win.geometry(f"{win_w}x{win_h}+{x}+{y}")
+                win.deiconify()
+                win.lift()
+                win.focus_force()
+                win.grab_set()
+
+            win.after(10, place_window)
 
         ttk.Button(win_select, text="Select", command=on_select).pack(pady=10)
 
@@ -481,15 +512,13 @@ class TimelapseApp:
     def run(self):
         self.root.mainloop()
 
-
-
 # Main
 
 def main():
-    if not is_raspberry_pi():
-        print("Warning: this script is intended to run on a Raspberry Pi.")
-    app = TimelapseApp()
-    app.run()
+        if not is_raspberry_pi():
+            print("Warning: this script is intended to run on a Raspberry Pi.")
+        app = TimelapseApp()
+        app.run()
 
 
 if __name__ == "__main__":
