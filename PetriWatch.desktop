@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PetriWatch
+Comment=Timelapse Acquisition System
+Icon=/home/administrator/WellView/logo.png
+Exec=lxterminal --working-directory=/home/administrator/WellView/ -e ./petriwatch.py 
+Type=Application
+Encoding=UTF-8
+Terminal=false
