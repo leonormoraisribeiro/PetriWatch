@@ -9,6 +9,8 @@ The hardware setup used is similar to that of **WellView** (Raspberry Pi 4B + Ra
 --- 
 
 ## Features
+- **One-Click Launch:** Includes a desktop shortcut with a custom i3S icon for easy access.
+- **Automated Setup:** A dedicated installation script handles permissions, system configurations, and shortcut creation.
 
 ### Image Acquisition
 
@@ -64,7 +66,16 @@ git clone https://github.com/leonormoraisribeiro/PetriWatch
 cd PetriWatch
 ```
 
-### 5. Run PetriWatch
+### 5. Run the Automated Installer
+
+The installer will set up the desktop shortcut, fix system execution permissions, and ensure the i3S icon is correctly linked
+
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+### 6. Run PetriWatch
 ```bash
 python3 petriwatch.py
 ```
@@ -82,15 +93,16 @@ Images are timestamped and numbered sequentially.
 ---
 
 ## Usage Guide
-1. Enter the **experiment name**
-2. Select **interval** between captures
-3. Select the image **resolution**
-4. Insert the **total number of photos**
-5. Optional) Enable **"Create video automatically"**
-6. Optional: open the **live preview**
-7. Press **Start Timelapse** 
-8. Acquisition begins; progress is displayed in real-time
-9. The program runs until all frames are captured
+1. Launch: Double-click the PetriWatch icon on your Desktop
+2. Enter the **experiment name**
+3. Select **interval** between captures
+4. Select the image **resolution**
+5. Insert the **total number of photos**
+6. Optional) Enable **"Create video automatically"**
+7. Optional: open the **live preview**
+8. Press **Start Timelapse** 
+9. Acquisition begins; progress is displayed in real-time
+10. The program runs until all frames are captured
 
 When finished:
 - If auto-video is enabled → MP4 is created automatically
