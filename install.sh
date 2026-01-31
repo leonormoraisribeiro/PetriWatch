@@ -19,7 +19,6 @@ if [ -f "$DESKTOP_FILE" ]; then
     sed -i "s|Icon=.*|Icon=$DIR/icon.png|" "$DESKTOP_DESTINATION"
     sed -i "s|Exec=.*|Exec=lxterminal --working-directory=$DIR -e ./petriwatch.py|" "$DESKTOP_DESTINATION"
     chmod +x "$DESKTOP_DESTINATION"
-    echo "-> Desktop shortcut created with custom icon."
 else
     echo "-> Error: PetriWatch.desktop not found."
 fi
