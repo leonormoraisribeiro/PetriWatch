@@ -10,12 +10,11 @@ echo "Configuring PetriWatch in: $DIR"
 chmod +x "$DIR/petriwatch.py"
 chmod 644 "$DIR/icon.png"
 
-# 2. Create the Desktop shortcut and fix formatting issues
+# 2. Create the Desktop shortcut
 DESKTOP_FILE="$DIR/PetriWatch.desktop"
 FINAL_DESKTOP="$USER_DESKTOP/PetriWatch.desktop"
 
 if [ -f "$DESKTOP_FILE" ]; then
-    # Remove Windows-style line endings (CRLF) and copy to Desktop
     tr -d '\r' < "$DESKTOP_FILE" > "$FINAL_DESKTOP"
     
     # Replace the PLACEHOLDER with the actual path
@@ -29,7 +28,7 @@ else
     exit 1
 fi
 
-# 3. Enable Quick Exec in system config (bypass 'Execute or Explain' menu)
+# 3. Enable Quick Exec in system config
 LIBFM_CONF="/home/$(whoami)/.config/libfm/libfm.conf"
 if [ -f "$LIBFM_CONF" ]; then
     sed -i 's/quick_exec=0/quick_exec=1/' "$LIBFM_CONF"
