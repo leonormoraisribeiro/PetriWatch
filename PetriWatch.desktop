@@ -1,8 +1,9 @@
 [Desktop Entry]
 Name=PetriWatch
-Comment=Timelapse Acquisition System
-Icon=/home/administrator/PetriWatch/logo.png
-Exec=lxterminal --working-directory=/home/administrator/PetriWatch/ -e ./petriwatch.py 
+Comment=i3S Petri Dish Timelapse Tool
+Icon=PATH_HERE/icon.png
+Exec=lxterminal --working-directory=PATH_HERE -e ./petriwatch.py
 Type=Application
 Encoding=UTF-8
 Terminal=false
+Categories=Science;Education;
