@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=PetriWatch
 Comment=Timelapse Acquisition System
-Icon=/home/administrator/PetriWatch/icon.png
+Icon=/home/administrator/PetriWatch/logo.png
 Exec=lxterminal --working-directory=/home/administrator/PetriWatch/ -e ./petriwatch.py 
 Type=Application
 Encoding=UTF-8
