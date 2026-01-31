@@ -76,6 +76,7 @@ chmod +x install.sh
 ```
 
 ### 6. Run PetriWatch
+By clicking in the desktop icon or by running the following code:
 ```bash
 python3 petriwatch.py
 ```
